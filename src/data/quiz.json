@@ -1,0 +1,52 @@
+[
+    {
+      "question": "Which is the largest organ in the human body?",
+      "options": ["Heart", "Skin", "Lung", "Liver"],
+      "correct": "Skin"
+    },
+    {  
+      "question": "What is the rarest blood type?",
+      "options": ["O-", "AB-", "B-", "AB+"],
+      "correct": "AB-"
+    },
+    {
+      "question": "Which planet is closest to the sun?",
+      "options": ["Venus", "Mercury", "Earth", "Mars"],
+      "correct": "Mercury"
+    },
+    {
+      "question": "How many bones does an adult human have?",
+      "options": ["206", "208", "210", "230"],
+      "correct": "206"
+    },
+    {
+      "question": "What is the smallest country in the world?",
+      "options": ["Maldives", "Monaco", "Vatican City", "Nauru"], 
+      "correct": "Vatican City"
+    },
+    {
+      "question": "Who invented the light bulb?",
+      "options": ["Thomas Edison", "Nikola Tesla", "Alexander Bell", "Albert Einstein"],
+      "correct": "Thomas Edison" 
+    },
+    {
+      "question": "What is the largest ocean in the world?",
+      "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+      "correct": "Pacific Ocean"
+    },
+    {
+      "question": "Where are the 2022 Winter Olympics being held?",
+      "options": ["Beijing", "Oslo", "Vancouver", "Sochi"],
+      "correct": "Beijing"
+    },
+    {
+      "question": "Which mammal lays eggs?",
+      "options": ["Platypus", "Echidna", "Kangaroo", "Koala"],
+      "correct": "Platypus"
+    },
+    {
+      "question": "What is the rarest M&M color?",
+      "options": ["Brown", "Yellow", "Blue", "Green"],
+      "correct": "Brown"
+    }
+  ]
