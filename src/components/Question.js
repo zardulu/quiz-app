@@ -1,4 +1,4 @@
-function Question({ data, onAnswer, questionNum, totalQuestions }) {
+function Question({ data, onAnswer, questionNum, totalQuestions,timer }) {
 
     if(!data) return <p>Loading...</p>;
   
@@ -7,6 +7,7 @@ function Question({ data, onAnswer, questionNum, totalQuestions }) {
     return (
       <div className="question flex flex-col p-20">
         <div className="question flex flex-col">
+        <p className="text-lg text-white font-mono mb-5">Time: {timer}s remaining</p>
         <h1 className="text-2xl text-white font-bold mb-8">
         Question {questionNum} of {totalQuestions}
       </h1> 

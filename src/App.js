@@ -6,6 +6,8 @@ export default function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showResults, setShowResults] = useState(false);
+  const [timeTaken, setTimeTaken] = useState(0);
+  const [timer, setTimer] = useState(0);
 
   let message;
 
@@ -25,12 +27,32 @@ export default function App() {
       setShowResults(true);
     }
   }, [currentQuestion]);
+  
+  useEffect(() => {
+    if (!showResults) {
+      setTimer(10); // Time per question
+      const interval = setInterval(() => {
+        setTimer((prev) => {
+          if (prev === 1) {
+            clearInterval(interval);
+            handleAnswer(); // Trigger next question
+            return 10; // Reset for the next question
+          } else {
+            return prev - 1;
+          }
+        });
+      }, 1000);
+      return () => clearInterval(interval);
+    }
+  }, [currentQuestion]);
+  
 
   const handleAnswer = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
     }
     setCurrentQuestion(currentQuestion + 1);
+    setTimeTaken(time => time + (10 - timer)); 
   }
   
   // Restart quiz
@@ -45,7 +67,6 @@ export default function App() {
   return (
     <div className="bg-gray-900 h-screen">
       
-      {/* Live Score */}
       <div className="fixed top-4 right-4 text-white text-xl">
         Score: {score}
       </div>
@@ -58,6 +79,9 @@ export default function App() {
           
           <p className="text-2xl text-center mb-4">
             Your score is <span className="font-bold">{score}</span> out of {quizData.length}
+          </p>
+          <p className="text-2xl text-center mb-4">
+          Time taken: {timeTaken} seconds
           </p>
           <p className="text-2xl text-center">{message}</p>
           
@@ -76,6 +100,7 @@ export default function App() {
           questionNum={currentQuestion + 1}
           totalQuestions={quizData.length} 
           onAnswer={handleAnswer}
+          timer={timer}
         />
       )}
 
